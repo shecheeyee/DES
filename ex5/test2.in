@@ -1,0 +1,20 @@
+/open Maybe.java
+Maybe<Integer> mi = Maybe.<Integer>of(1)
+
+Maybe<String> ms = Maybe.<String>of("1")
+
+Maybe<Integer> ei = Maybe.<Integer>empty()
+
+Maybe<String> es = Maybe.<String>empty()
+
+mi.equals(mi)
+
+mi.equals(ms)
+
+mi.equals(1)
+
+mi.equals(ei)
+
+mi.equals(es)
+
+ei.equals(es)
