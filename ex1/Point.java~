@@ -1,0 +1,47 @@
+import java.util.*;
+import java.lang.Math;
+
+class Point{
+	double x;
+	double y;
+
+	Point(double x, double y){
+		this.x = x;
+		this.y = y;
+	}
+
+	public String toString(){
+	       	return  "("+ String.format("%.3f",getX())+ ", "+ 
+			String.format("%.3f",getY()) + ")";
+	}
+
+	private double getX(){
+		return this.x;
+	}
+	private double getY(){
+		return this.y;
+	}
+
+	Point midPoint(Point p){
+		double dx = ( x + p.x ) / 2;
+		double dy = ( y + p.y ) / 2;
+		return new Point(dx, dy);
+	}
+
+	double angleTo(Point p){
+		double theta = Math.atan2(p.y,p.x);
+		return theta;
+	}			
+
+	Point moveTo(double theta, double d) {
+		return new Point( getX() + d *Math.cos(theta), y
+			       	+ d * Math.sin(theta));
+	}
+
+	double distTo(Point otherpoint) {
+	    double dispX = this.getX() -otherpoint.getX();
+	    double dispY = this.getY() -otherpoint.getY();
+	    return Math.sqrt(dispX * dispX + dispY * dispY);
+    }
+}
+
